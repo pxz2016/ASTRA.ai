@@ -497,7 +497,7 @@ class OpenAIChatGPTExtension(Extension):
             )
             if resp is None:
                 logger.error(
-                    f"get_chat_completions_stream Response is None: {input_text}"
+                    f"get_chat_completions_stream Response is None: {input_text}=== {self.openai_chatgpt}"
                 )
                 return
 

@@ -19,7 +19,7 @@ const getInitialState = (): InitialState => {
     themeColor: COLOR_LIST[0].active,
     roomConnected: false,
     agentConnected: false,
-    language: "en-US",
+    language: "zh-CN",
     voiceType: "male",
     chatItems: [],
     graphName: "camera.va.openai.azure"

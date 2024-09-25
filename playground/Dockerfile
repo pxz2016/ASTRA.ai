@@ -7,6 +7,10 @@ WORKDIR /app
 # COPY .env.example .env
 COPY . .
 
+
+# 设置 npm 的源为国内的源
+RUN npm config set registry https://registry.npmmirror.com/
+
 RUN npm i --verbose && \
     npm run build
 
@@ -21,6 +25,8 @@ RUN mkdir .next
 
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
+# 复制 public 文件夹到最终镜像
+COPY --from=builder /app/public ./public
 
 EXPOSE 3000
 

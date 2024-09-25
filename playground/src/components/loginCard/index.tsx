@@ -47,16 +47,16 @@ const LoginCard = () => {
 
 
   return <div className={styles.card}>
-    <section className={styles.top}>
+    {/* <section className={styles.top}>
       <span className={styles.github} onClick={onClickGithub}>
         <GithubIcon></GithubIcon>
         <span className={styles.text}>GitHub</span>
       </span>
-    </section>
+    </section> */}
     <section className={styles.content}>
       <div className={styles.title}>
         <LogoIcon transform="scale(1.5 1.5)"></LogoIcon>
-        <span className={styles.text}>Astra - a multimodal interactive agent</span>
+        <span className={styles.text}>多模态交互代理</span>
       </div>
       <div className={styles.section}>
         <input placeholder="User Name" value={userName} onChange={onUserNameChange} ></input>

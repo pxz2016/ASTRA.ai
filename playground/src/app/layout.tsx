@@ -6,8 +6,8 @@ import './global.css'
 
 
 export const metadata: Metadata = {
-  title: "Astra.ai",
-  description: "A multimodal agent powered by TEN",
+  title: "HomeGPT",
+  description: "HomeGPT is a home assistant that can help you with your daily tasks.",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black",

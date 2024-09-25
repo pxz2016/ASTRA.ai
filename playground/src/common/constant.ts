@@ -9,12 +9,12 @@ export const DEFAULT_OPTIONS: IOptions = {
 export const DESCRIPTION = "This is an AI voice assistant powered by ASTRA.ai framework, Agora, Azure and ChatGPT."
 export const LANGUAGE_OPTIONS: LanguageOptionItem[] = [
   {
-    label: "English",
-    value: "en-US"
+    label: "中文",
+    value: "zh-CN"
   },
   {
-    label: "Chinese",
-    value: "zh-CN"
+    label: "English",
+    value: "en-US"
   },
   {
     label: "Korean",

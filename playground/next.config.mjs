@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  // basePath: '/ai-agent',
+  basePath: '/agent',
   // output: 'export',
   output: 'standalone',
   reactStrictMode: false,

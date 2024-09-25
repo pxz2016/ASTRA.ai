@@ -87,7 +87,7 @@ const Description = () => {
 
   return <div className={styles.description}>
     <span className={styles.title}>Description</span>
-    <span className={styles.text}>Astra is a multimodal agent powered by TEN</span>
+    <span className={styles.text}>多模态交互代理</span>
     <span className={`${styles.btnConnect} ${agentConnected ? styles.disconnect : ''}`} onClick={onClickConnect}>
       <span className={`${styles.btnText} ${agentConnected ? styles.disconnect : ''}`}>
         {!agentConnected ? "Connect" : "Disconnect"}

@@ -1,6 +1,8 @@
 import { genUUID } from "./utils"
 import { Language } from "@/types"
 
+const BASE_PATH = process.env.BASE_PATH || "/agent"
+
 interface StartRequestConfig {
   channel: string
   userId: number,
@@ -16,7 +18,7 @@ interface GenAgoraDataConfig {
 
 export const apiGenAgoraData = async (config: GenAgoraDataConfig) => {
   // the request will be rewrite at middleware.tsx to send to $AGENT_SERVER_URL
-  const url = `/api/token/generate`
+  const url = BASE_PATH + `/api/token/generate`
   const { userId, channel } = config
   const data = {
     request_id: genUUID(),
@@ -36,7 +38,7 @@ export const apiGenAgoraData = async (config: GenAgoraDataConfig) => {
 
 export const apiStartService = async (config: StartRequestConfig): Promise<any> => {
   // look at app/apis/route.tsx for the server-side implementation
-  const url = `/api/agents/start`
+  const url = BASE_PATH + `/api/agents/start`
   const { channel, userId, graphName, language, voiceType } = config
   const data = {
     request_id: genUUID(),
@@ -59,7 +61,7 @@ export const apiStartService = async (config: StartRequestConfig): Promise<any> 
 
 export const apiStopService = async (channel: string) => {
   // the request will be rewrite at middleware.tsx to send to $AGENT_SERVER_URL
-  const url = `/api/agents/stop`
+  const url = BASE_PATH + `/api/agents/stop`
   const data = {
     request_id: genUUID(),
     channel_name: channel
@@ -77,7 +79,7 @@ export const apiStopService = async (channel: string) => {
 
 export const apiGetDocumentList = async () => {
   // the request will be rewrite at middleware.tsx to send to $AGENT_SERVER_URL
-  const url = `/api/vector/document/preset/list`
+  const url = BASE_PATH + `/api/vector/document/preset/list`
   let resp: any = await fetch(url, {
     method: "GET",
     headers: {
@@ -93,7 +95,7 @@ export const apiGetDocumentList = async () => {
 
 export const apiUpdateDocument = async (options: { channel: string, collection: string, fileName: string }) => {
   // the request will be rewrite at middleware.tsx to send to $AGENT_SERVER_URL
-  const url = `/api/vector/document/update`
+  const url = BASE_PATH + `/api/vector/document/update`
   const { channel, collection, fileName } = options
   const data = {
     request_id: genUUID(),
@@ -116,7 +118,7 @@ export const apiUpdateDocument = async (options: { channel: string, collection: 
 // ping/pong 
 export const apiPing = async (channel: string) => {
   // the request will be rewrite at middleware.tsx to send to $AGENT_SERVER_URL
-  const url = `/api/agents/ping`
+  const url = BASE_PATH + `/api/agents/ping`
   const data = {
     request_id: genUUID(),
     channel_name: channel

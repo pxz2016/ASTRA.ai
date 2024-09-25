@@ -33,9 +33,9 @@ const Header = () => {
       </span>
     </InfoPopover>
     <div className={styles.links}>
-      <span onClick={onClickGithub} className={styles.githubWrapper}>
+      {/* <span onClick={onClickGithub} className={styles.githubWrapper}>
         <GithubIcon></GithubIcon>
-      </span>
+      </span> */}
       <StylePopover>
         <ColorPickerIcon color={themeColor} ></ColorPickerIcon>
       </StylePopover>
